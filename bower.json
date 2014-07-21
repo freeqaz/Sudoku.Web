@@ -1,0 +1,18 @@
+{
+  "name": "TicTacToe.Node",
+  "version": "0.0.0",
+  "authors": [
+    "Free Wortley <00free@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2"
+  }
+}
