@@ -118,14 +118,16 @@ $(document).ready(function () {
                             var identityString = x + "-" + y + "-" + xCell + "-" + yCell;
                             var cell = $(".cellItemContainer" + identityString);
                             cell.removeClass("staticSudokuBackground");
-                            cell.removeClass("pure-button");
+                            cell.removeClass("sudokuInput");
                             cell.empty();
-                            if (grid[x + xCell][y + yCell] !== ".") {
+
+                            if (grid[(x * 3) + xCell][(y * 3) + yCell] !== ".") {
                                 cell.addClass("staticSudokuBackground");
-                                cell.append("<div class='staticSudoku centered'>" + grid[x + xCell][y + yCell] + "</div>");
+                                cell.append("<div class='staticSudoku centered'>" + grid[(x * 3) + xCell][(y * 3) + yCell] + "</div>");
                             }
                             else {
-                                cell.addClass("sudokuInput").click(function () { console.log("wow"); });
+                                cell.addClass("sudokuInput").click(function () {
+                                });
                             }
                         }
                     }
