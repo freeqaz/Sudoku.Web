@@ -110,7 +110,8 @@ $(document).ready(function () {
             });
         },
         overwriteView: function (grid) {
-
+            // Map our grid to the DOM.
+            // This will overwrite existing data.
             for (var x = 0; x < 3; x++) {
                 for (var y = 0; y < 3; y++) {
                     for (var xCell = 0; xCell < 3; xCell++) {
@@ -126,7 +127,10 @@ $(document).ready(function () {
                                 cell.append("<div class='staticSudoku centered'>" + grid[(x * 3) + xCell][(y * 3) + yCell] + "</div>");
                             }
                             else {
+                                // Event that fires
                                 cell.addClass("sudokuInput").click(function () {
+                                    $(".sudokuInput").removeClass("selectedInput");
+                                    $(this).addClass("selectedInput");
                                 });
                             }
                         }

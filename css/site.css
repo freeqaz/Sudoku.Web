@@ -53,10 +53,24 @@ body {
     height:100%;
 }
 
-.staticSudoku {
+.sudokuInput, .sudokuNumberBarItem {
+    cursor: pointer;
+}
+
+.staticSudoku, .sudokuInput, .sudokuNumberBarItem {
     font-family: "Open Sans";
     font-weight: 400;
     font-size:24pt; 
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.staticSudoku {
+    cursor: default;
 }
 
 .staticSudokuBackground {
@@ -64,6 +78,46 @@ body {
     height:100%;
     margin: -1px;
     background-color: rgba(55, 55, 100, 0.1);
+}
+
+#sudokuNumberInputBar {
+    width: auto;
+    margin: 10px auto;
+    padding: 4px 1px;
+    background: rgba(255, 255, 255, 0.37);
+}
+
+.sudokuNumberBarItemContainer {
+    padding: 0px 2px;
+}
+
+.selectedInput {
+    background-color: rgba(100, 100, 255, 0.3);
+}
+
+.sudokuNumberBarItem {
+    float: left;
+    width: 52px;
+    list-style:none;
+    text-align:center;
+    margin: 0px 1px;
+    background-color: rgba(255, 255, 255, 0.6);
+    height: 52px;
+    line-height: 50px;
+}
+
+.disabledBarItem {
+    color: #77778A;
+    background-color: rgba(140, 140, 160, 0.3);
+    cursor: default;
+}
+
+.alignBarItemRight {
+    margin: 0px 5px 0px 1px;
+}
+
+.alignBarItemLeft {
+    margin: 0px 1px 0px 5px;
 }
 
 .v {
