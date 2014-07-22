@@ -1,9 +1,7 @@
 .sudokuGrid {
-    background-color: rgba(255,255,255,0.33);
+    background-color: rgba(255,255,255,0.37);
     width: 500px;
-    height: 500px;
-    border: 4px solid rgba(42,10,0,0.8);
-    border-spacing: 0px;
+    height: 501px;
 }
 
 .sudokuRow {
@@ -12,54 +10,70 @@
 }
 
 .sudokuCell {
+    width: 33.3%;
+    height: 33.3%;
     padding: 0px;
     margin: 0px;
 }
 
 .sudokuCellGrid {
-    height:100%;
-    width:100%;
-    border-spacing: 2px;
-}
-
-.gay {
-    border: 200px solid black;
+    height: 100%;
+    width: 100%;
 }
 
 .sudokuCellRow {
 }
 
 .sudokuCellColumn {
-    border: 1px solid rgba(42,10,0,0.8);
+    width:33.3%;
+    height:33.3%;
+    background-color: rgba(255,255,255,0.66);
+    padding: 0px;
 }
 
 div.cellItemContainer {
-    width:100%;
-    height:100%;
-    background-color: rgba(255,255,255,0.55);
 }
 
 body {
     /* Image from -> 
        http://wallpaperscraft.com/download/spring_garden_flowering_trees_pink_30537/3840x2400 */
-    background-image: url('../img/sudoku-background.jpg');
-    background-size: 100% auto;
+    background: url('../img/sudoku-background.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-.ticTacToe-cell {
-    width:100px;
-    height:100px;
-    padding: 10px 10px 10px 10px;
+.sudokuInput {
+    font-family: inherit;
+    font-size: 100%;
+    text-decoration: none;
+    border-radius: 2px;
+    width:100%;
+    height:100%;
 }
 
-.v{
-    border-left:1px solid #000;
-    border-right:1px solid #000;
+.staticSudoku {
+    font-family: "Open Sans";
+    font-weight: 400;
+    font-size:24pt; 
 }
 
-.h{
-    border-top:1px solid #000;
-    border-bottom:1px solid #000;
+.staticSudokuBackground {
+    width:100%;
+    height:100%;
+    margin: -1px;
+    background-color: rgba(55, 55, 100, 0.1);
+}
+
+.v {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.h {
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .centered {
