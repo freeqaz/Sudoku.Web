@@ -598,6 +598,50 @@
         return units;
     };
 
+    // Takes in an (x, y) and returns all of the valid moves at that coordinate
+    sudoku.get_available_moves = function (board_grid, x, y) {
+        var cellX = Math.floor(x / 3),
+            cellY = Math.floor(y / 3);
+
+        var allMoves = ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+            moves = allMoves.slice(0);
+
+        // Get used numbers in cell
+        for (var yyy = 0; yyy < 3; yyy++) {
+            for (var xxx = 0; xxx < 3; xxx++) {
+                var valueAtTile = board_grid[(cellX * 3) + xxx][(cellY * 3) + yyy];
+
+                var indexOfTile = moves.indexOf(valueAtTile);
+                if (indexOfTile != -1) {
+                    moves.splice(indexOfTile, 1);
+                }
+            }
+        }
+
+        // Get used numbers in row
+        for (var rowX = 0; rowX < 9; rowX++) {
+            var valueAtRowX = board_grid[rowX][y];
+
+            var indexOfRowX = moves.indexOf(valueAtRowX);
+            if (indexOfRowX != -1) {
+                moves.splice(indexOfRowX, 1);
+            }
+        }
+
+        // Get used numbers in column
+        for (var rowY = 0; rowY < 9; rowY++) {
+            var valueAtRowY = board_grid[x][rowY];
+
+            var indexOfRowY = moves.indexOf(valueAtRowY);
+            if (indexOfRowY != -1) {
+                moves.splice(indexOfRowY, 1);
+            }
+        }
+
+        console.log(moves);
+
+        return moves;
+    };
 
     // Conversions
     // -------------------------------------------------------------------------

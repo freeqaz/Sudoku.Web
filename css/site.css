@@ -1,7 +1,29 @@
 .sudokuGrid {
     background-color: rgba(255,255,255,0.37);
-    width: 500px;
-    height: 501px;
+}
+
+#maincontainer {
+    width:100%;
+}
+
+#viewScaleContainer {
+    width: 100%;
+    max-width: 960px;
+    display: inline-block;
+    position: relative;
+}
+
+#dummy {
+    margin-top: 100%; /* 4:3 aspect ratio */
+}
+
+#contentContainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: silver /* show me! */
 }
 
 .sudokuRow {

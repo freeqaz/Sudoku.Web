@@ -11,34 +11,40 @@ $(document).ready(function () {
         this.options = options;
     };
 
-    Sudoku.prototype = {
+    var methods = {
         defaults: {
-            message: 'Hello world!'
+            difficulty: "easy"
         },
         init: function () {
             this.config = $.extend({}, this.defaults, this.options);
 
-            this.generateView(this);
+            this.generateView();
 
-            var gridString = sudoku.generate("easy");
-
-            this.overwriteView(sudoku.board_string_to_grid(gridString), true);
+            this.overwriteView(this.generateSudokuPuzzle(this.config.difficulty), true);
 
             return this;
         },
+        // Generates a sudoku grid.
+        // Takes in parameter for difficulty.
+        // Options: 
+        // "easy": 62, "medium": 53,
+        // "hard": 44, "very-hard": 35,
+        // "insane": 26, "inhuman": 17,
+        // Or any int that you specify.
+        // Returns a 2d array.
         generateSudokuPuzzle: function(difficulty) {
             var gridString = sudoku.generate(difficulty, false);
 
-
+            return sudoku.board_string_to_grid(gridString);
         },
-        generateView: function (self) {
+        generateView: function () {
 
             var sudokuContainer = this.$elem;
 
             sudokuContainer.addClass("sudokuContainer centered");
 
             // Yeah... Pretty sure I wouldn't use a table in the future.
-            // These things are miserable. :(
+            // These things are miserable. Not flexible. :(
             // I'd probably hardcode the HTML as well, since
             // I'm never going to have a dynamically sized sudoku puzzle!
             // If I get a chance, maybe I'll rewrite this to use divs.
@@ -81,7 +87,7 @@ $(document).ready(function () {
                     cell.append("<table class='sudokuCellGrid sudokuCellGrid" + identityString + "' />");
 
                     // Generate us a sub-cell
-                    self.generateCell($(".sudokuCellGrid" + identityString),
+                    methods.generateCell($(".sudokuCellGrid" + identityString),
                                       sudokuBoxes,
                                       identityString);
                 });
@@ -110,11 +116,27 @@ $(document).ready(function () {
             });
         },
         overwriteView: function (grid) {
+
+            var self = {
+                clickInputTile: function () {
+                    $(".sudokuInput").removeClass("selectedInput");
+                    $(this).addClass("selectedInput");
+
+                    var parsed = methods.parseIdentityString($(this).data("identity"));
+
+                    var validMoves = sudoku.get_available_moves(grid, parsed.xGrid, parsed.yGrid);
+
+                    //.find("[data-slide='" + current + "']");
+                },
+                selectedTile: null
+            };
+
             // Map our grid to the DOM.
             // This will overwrite existing data.
             for (var x = 0; x < 3; x++) {
                 for (var y = 0; y < 3; y++) {
                     for (var xCell = 0; xCell < 3; xCell++) {
+                        // Inception!
                         for (var yCell = 0; yCell < 3; yCell++) {
                             var identityString = x + "-" + y + "-" + xCell + "-" + yCell;
                             var cell = $(".cellItemContainer" + identityString);
@@ -122,23 +144,44 @@ $(document).ready(function () {
                             cell.removeClass("sudokuInput");
                             cell.empty();
 
-                            if (grid[(x * 3) + xCell][(y * 3) + yCell] !== ".") {
-                                cell.addClass("staticSudokuBackground");
-                                cell.append("<div class='staticSudoku centered'>" + grid[(x * 3) + xCell][(y * 3) + yCell] + "</div>");
+                            var currentTile = grid[(x * 3) + xCell][(y * 3) + yCell];
+
+                            if (currentTile !== ".") {
+                                // Immutable cell setup. 'known' values
+                                cell.addClass("staticSudokuBackground")
+                                    .data("identity", identityString);
+                                cell.append("<div class='staticSudoku centered'>" + currentTile + "</div>");
                             }
                             else {
-                                // Event that fires
-                                cell.addClass("sudokuInput").click(function () {
-                                    $(".sudokuInput").removeClass("selectedInput");
-                                    $(this).addClass("selectedInput");
-                                });
+                                // Mutable cell setup. User defined
+                                cell.data("identity", identityString);
+                                cell.addClass("sudokuInput")
+                                    .click(self.clickInputTile);
                             }
                         }
                     }
                 }
             }
+        },
+        // Parses our metadata string into a usable object
+        parseIdentityString: function (identityString) {
+            var split = identityString.split("-");
+
+            var parsed = {
+                x: parseInt(split[0]),
+                y: parseInt(split[1]),
+                xCell: parseInt(split[2]), 
+                yCell: parseInt(split[3])
+            };
+
+            parsed.xGrid = (parsed.x * 3) + parsed.xCell;
+            parsed.yGrid = (parsed.y * 3) + parsed.yCell;
+            
+            return parsed;
         }
     };
+
+    Sudoku.prototype = methods;
 
     Sudoku.defaults = Sudoku.prototype.defaults;
 
