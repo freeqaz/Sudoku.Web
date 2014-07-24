@@ -13,14 +13,16 @@ $(document).ready(function () {
 
     var methods = {
         defaults: {
-            difficulty: "easy"
+            difficulty: "medium"
         },
         init: function () {
             this.config = $.extend({}, this.defaults, this.options);
 
             this.generateView();
 
-            this.overwriteView(this.generateSudokuPuzzle(this.config.difficulty), true);
+            this.grid = this.generateSudokuPuzzle(this.config.difficulty);
+
+            this.overwriteView(this.grid, true);
 
             return this;
         },
@@ -38,6 +40,7 @@ $(document).ready(function () {
             return sudoku.board_string_to_grid(gridString);
         },
         generateView: function () {
+            var self = this;
 
             var sudokuContainer = this.$elem;
 
@@ -92,6 +95,21 @@ $(document).ready(function () {
                                       identityString);
                 });
             });
+
+            
+            $(".sudokuNumberBarItem").click(function () {
+                var inputValue = $(this).text();
+                console.log(inputValue);
+
+                var selectedTile = $(".selectedInput");
+                var parsed = methods.parseIdentityString(selectedTile.data("identity"));
+                console.log(selectedTile);
+                console.log(parsed);
+
+                selectedTile.empty().append(inputValue);
+
+                self.grid[parsed.xGrid][parsed.yGrid] = inputValue;
+            });
         },
         generateCell: function (cell, sudokuBoxes, origin) {
             _.each(sudokuBoxes, function (cellRow) {
@@ -126,7 +144,11 @@ $(document).ready(function () {
 
                     var validMoves = sudoku.get_available_moves(grid, parsed.xGrid, parsed.yGrid);
 
-                    //.find("[data-slide='" + current + "']");
+                    $(".activeBarItem").removeClass("activeBarItem");
+
+                    _.each(validMoves, function (move, i) {
+                        $(".sudokuNumberBarItem[data-inputNumber='" + move + "']").addClass("activeBarItem");
+                    });
                 },
                 selectedTile: null
             };

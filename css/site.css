@@ -58,8 +58,15 @@ body {
     height:100%;
 }
 
-.sudokuInput, .sudokuNumberBarItem {
+
+
+.sudokuInput, .sudokuNumberBarItem.active {
     cursor: pointer;
+}
+
+.sudokuNumberBarItem.activeBarItem {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: black;
 }
 
 .staticSudoku, .sudokuInput, .sudokuNumberBarItem {
@@ -106,13 +113,9 @@ body {
     width: 52px;
     list-style:none;
     text-align:center;
-    margin: 0px 1px;
-    background-color: rgba(255, 255, 255, 0.6);
+    margin: 0px 1px 2px 1px;
     height: 52px;
     line-height: 50px;
-}
-
-.disabledBarItem {
     color: #77778A;
     background-color: rgba(140, 140, 160, 0.3);
     cursor: default;

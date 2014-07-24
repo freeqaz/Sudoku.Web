@@ -638,8 +638,6 @@
             }
         }
 
-        console.log(moves);
-
         return moves;
     };
 
