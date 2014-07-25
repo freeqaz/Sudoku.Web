@@ -97,7 +97,7 @@ $(document).ready(function () {
                 });
             });
 
-            
+            // When you select a number to insert (make a move)
             $(".sudokuNumberBarItem").click(function () {
                 // It's an invalid move
                 if ($(this).hasClass("disabled")) {
@@ -113,7 +113,9 @@ $(document).ready(function () {
 
                 self.grid[parsed.xGrid][parsed.yGrid] = inputValue;
 
+                // See if you're a winner!
                 if (sudoku.isFinished(self.grid)) {
+                    // Show you how cool you are. ;)
                     $("#maincontainer").hide();
                     $("#winningOverlay").show();
                 }
@@ -121,6 +123,7 @@ $(document).ready(function () {
                 self.refreshMoves(self.grid, parsed.xGrid, parsed.yGrid);
             });
 
+            // When you hit reset on a cell, aka clear it.
             $(".resetSelectedButton").click(function () {
                 // We don't have a selected tile
                 if (!$(this).hasClass("activeBarItem")) {
