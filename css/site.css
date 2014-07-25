@@ -58,15 +58,8 @@ body {
     height:100%;
 }
 
-
-
 .sudokuInput, .sudokuNumberBarItem.active {
     cursor: pointer;
-}
-
-.sudokuNumberBarItem.activeBarItem {
-    background-color: rgba(255, 255, 255, 0.6);
-    color: black;
 }
 
 .staticSudoku, .sudokuInput, .sudokuNumberBarItem {
@@ -100,12 +93,26 @@ body {
     background: rgba(255, 255, 255, 0.37);
 }
 
+#sudokuNumberInputBar:after { 
+   content: " ";
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
 .sudokuNumberBarItemContainer {
+    float: left;
     padding: 0px 2px;
 }
 
 .selectedInput {
     background-color: rgba(100, 100, 255, 0.3);
+}
+
+/* When it's a valid move (user can click) */
+.sudokuNumberBarItem.activeBarItem {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: black;
 }
 
 .sudokuNumberBarItem {
@@ -119,6 +126,9 @@ body {
     color: #77778A;
     background-color: rgba(140, 140, 160, 0.3);
     cursor: default;
+}
+
+.resetSelectedButton {
 }
 
 .alignBarItemRight {

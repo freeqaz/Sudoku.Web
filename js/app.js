@@ -98,13 +98,15 @@ $(document).ready(function () {
 
             
             $(".sudokuNumberBarItem").click(function () {
+                if ($(this).hasClass("disabled")) {
+                    console.log("blah");
+                    return;
+                }
+
                 var inputValue = $(this).text();
-                console.log(inputValue);
 
                 var selectedTile = $(".selectedInput");
                 var parsed = methods.parseIdentityString(selectedTile.data("identity"));
-                console.log(selectedTile);
-                console.log(parsed);
 
                 selectedTile.empty().append(inputValue);
 
@@ -136,6 +138,8 @@ $(document).ready(function () {
         overwriteView: function (grid) {
 
             var self = {
+                // When we click a tile in the grid that we want
+                // To input a number on.
                 clickInputTile: function () {
                     $(".sudokuInput").removeClass("selectedInput");
                     $(this).addClass("selectedInput");
@@ -145,9 +149,11 @@ $(document).ready(function () {
                     var validMoves = sudoku.get_available_moves(grid, parsed.xGrid, parsed.yGrid);
 
                     $(".activeBarItem").removeClass("activeBarItem");
+                    $(".sudokuNumberBarItem").addClass("disabled");
 
                     _.each(validMoves, function (move, i) {
-                        $(".sudokuNumberBarItem[data-inputNumber='" + move + "']").addClass("activeBarItem");
+                        $(".sudokuNumberBarItem[data-inputNumber='" + move + "']").addClass("activeBarItem")
+                                                                                  .removeClass("disabled");
                     });
                 },
                 selectedTile: null
@@ -160,7 +166,10 @@ $(document).ready(function () {
                     for (var xCell = 0; xCell < 3; xCell++) {
                         // Inception!
                         for (var yCell = 0; yCell < 3; yCell++) {
-                            var identityString = x + "-" + y + "-" + xCell + "-" + yCell;
+                            var identityString = x + "-"
+                                               + y + "-"
+                                               + xCell + "-"
+                                               + yCell;
                             var cell = $(".cellItemContainer" + identityString);
                             cell.removeClass("staticSudokuBackground");
                             cell.removeClass("sudokuInput");
