@@ -110,7 +110,8 @@ body {
 }
 
 /* When it's a valid move (user can click) */
-.sudokuNumberBarItem.activeBarItem {
+.sudokuNumberBarItem.activeBarItem,
+.resetSelectedButton.activeBarItem {
     background-color: rgba(255, 255, 255, 0.6);
     color: black;
 }
@@ -129,6 +130,16 @@ body {
 }
 
 .resetSelectedButton {
+    float: left;
+    width: 106px;
+    list-style:none;
+    text-align:center;
+    margin: 0px 1px 2px 3px;
+    height: 52px;
+    line-height: 50px;
+    color: #77778A;
+    background-color: rgba(140, 140, 160, 0.3);
+    cursor: pointer;
 }
 
 .alignBarItemRight {

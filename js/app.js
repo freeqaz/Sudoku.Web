@@ -149,6 +149,7 @@ $(document).ready(function () {
                     var validMoves = sudoku.get_available_moves(grid, parsed.xGrid, parsed.yGrid);
 
                     $(".activeBarItem").removeClass("activeBarItem");
+                    $(".resetSelectedButton").addClass("activeBarItem");
                     $(".sudokuNumberBarItem").addClass("disabled");
 
                     _.each(validMoves, function (move, i) {
@@ -166,10 +167,8 @@ $(document).ready(function () {
                     for (var xCell = 0; xCell < 3; xCell++) {
                         // Inception!
                         for (var yCell = 0; yCell < 3; yCell++) {
-                            var identityString = x + "-"
-                                               + y + "-"
-                                               + xCell + "-"
-                                               + yCell;
+                            var identityString = x + "-" + y + "-" + xCell + "-" + yCell;
+
                             var cell = $(".cellItemContainer" + identityString);
                             cell.removeClass("staticSudokuBackground");
                             cell.removeClass("sudokuInput");
