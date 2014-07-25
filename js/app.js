@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     var methods = {
         defaults: {
-            difficulty: "medium"
+            difficulty: "easy"
         },
         init: function () {
             this.config = $.extend({}, this.defaults, this.options);
@@ -43,6 +43,7 @@ $(document).ready(function () {
             var self = this;
 
             var sudokuContainer = this.$elem;
+            $("#winningOverlay").hide();
 
             sudokuContainer.addClass("sudokuContainer centered");
 
@@ -111,6 +112,11 @@ $(document).ready(function () {
                 selectedTile.empty().append(inputValue);
 
                 self.grid[parsed.xGrid][parsed.yGrid] = inputValue;
+
+                if (sudoku.isFinished(self.grid)) {
+                    $("#maincontainer").hide();
+                    $("#winningOverlay").show();
+                }
 
                 self.refreshMoves(self.grid, parsed.xGrid, parsed.yGrid);
             });

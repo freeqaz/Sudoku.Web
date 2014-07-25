@@ -641,6 +641,26 @@
         return moves;
     };
 
+    // Checks if the board is full 'finished'
+    // Don't call this if you can have insert invalid placements...
+    // It's inexpensive to call every modification.
+    sudoku.isFinished = function (board_grid) {
+        var fullTiles = 0;
+
+        for (var xi = 0; xi < 9; xi++) {
+            for (var yi = 0; yi < 9; yi++) {
+                if (board_grid[xi][yi] !== ".") {
+                    fullTiles++;
+                }
+            }
+        }
+
+        if (fullTiles === 81) {
+            return true;
+        }
+        return false;
+    };
+
     // Conversions
     // -------------------------------------------------------------------------
     sudoku.board_string_to_grid = function (board_string) {

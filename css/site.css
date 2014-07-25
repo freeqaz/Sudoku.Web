@@ -119,8 +119,8 @@ body {
 
 /* When it's a valid move (user can click) */
 .sudokuNumberBarItem.activeBarItem,
-.resetSelectedButton.activeBarItem {
-    background-color: rgba(255, 255, 255, 0.6);
+    .resetSelectedButton.activeBarItem {
+        background-color: rgba(255, 255, 255, 0.6);
     color: black;
 }
 
@@ -156,6 +156,22 @@ body {
 
 .alignBarItemLeft {
     margin: 0px 1px 0px 5px;
+}
+
+#winningOverlay {
+    width: 500px;
+    height: 490px;
+    text-align: center;
+    font-family: "Open Sans";
+    font-weight: 400;
+    font-size:50pt; 
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: rgba(255,255,255,0.37);
 }
 
 .v {
