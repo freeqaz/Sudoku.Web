@@ -91,15 +91,15 @@ $(document).ready(function () {
 
                     // Generate us a sub-cell
                     methods.generateCell($(".sudokuCellGrid" + identityString),
-                                      sudokuBoxes,
-                                      identityString);
+                                         sudokuBoxes,
+                                         identityString);
                 });
             });
 
             
             $(".sudokuNumberBarItem").click(function () {
+                // It's an invalid move
                 if ($(this).hasClass("disabled")) {
-                    console.log("blah");
                     return;
                 }
 
@@ -111,6 +111,24 @@ $(document).ready(function () {
                 selectedTile.empty().append(inputValue);
 
                 self.grid[parsed.xGrid][parsed.yGrid] = inputValue;
+
+                self.refreshMoves(self.grid, parsed.xGrid, parsed.yGrid);
+            });
+
+            $(".resetSelectedButton").click(function () {
+                // We don't have a selected tile
+                if (!$(this).hasClass("activeBarItem")) {
+                    return;
+                }
+
+                var selectedTile = $(".selectedInput");
+                var parsed = methods.parseIdentityString(selectedTile.data("identity"));
+
+                selectedTile.empty();
+
+                self.grid[parsed.xGrid][parsed.yGrid] = ".";
+
+                self.refreshMoves(self.grid, parsed.xGrid, parsed.yGrid);
             });
         },
         generateCell: function (cell, sudokuBoxes, origin) {
@@ -135,8 +153,26 @@ $(document).ready(function () {
                 });
             });
         },
-        overwriteView: function (grid) {
+        refreshMoves: function (grid, x, y) {
+            var validMoves = sudoku.get_available_moves(grid, x, y);
 
+            $(".resetSelectedButton").removeClass("activeBarItem");
+            $(".activeBarItem").removeClass("activeBarItem");
+            $(".sudokuNumberBarItem").addClass("disabled");
+
+            // Enable the buttons that are valid moves.
+            _.each(validMoves, function (move, i) {
+                $(".sudokuNumberBarItem[data-inputNumber='" + move + "']").addClass("activeBarItem")
+                                                                          .removeClass("disabled");
+            });
+
+            // If we have content, allow hitting reset.
+            if (grid[x][y] !== ".") {
+                $(".resetSelectedButton").addClass("activeBarItem");
+            }
+        },
+        overwriteView: function (grid) {
+            var originalScope = this;
             var self = {
                 // When we click a tile in the grid that we want
                 // To input a number on.
@@ -146,16 +182,7 @@ $(document).ready(function () {
 
                     var parsed = methods.parseIdentityString($(this).data("identity"));
 
-                    var validMoves = sudoku.get_available_moves(grid, parsed.xGrid, parsed.yGrid);
-
-                    $(".activeBarItem").removeClass("activeBarItem");
-                    $(".resetSelectedButton").addClass("activeBarItem");
-                    $(".sudokuNumberBarItem").addClass("disabled");
-
-                    _.each(validMoves, function (move, i) {
-                        $(".sudokuNumberBarItem[data-inputNumber='" + move + "']").addClass("activeBarItem")
-                                                                                  .removeClass("disabled");
-                    });
+                    originalScope.refreshMoves(grid, parsed.xGrid, parsed.yGrid);
                 },
                 selectedTile: null
             };

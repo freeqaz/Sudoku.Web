@@ -1,3 +1,8 @@
+/*
+    I know, I know. It ain't LESS or SASS.
+    But I ain't got time for yo' SASS!
+*/
+
 .sudokuGrid {
     background-color: rgba(255,255,255,0.37);
     width: 100%;
@@ -37,6 +42,7 @@
 }
 
 div.cellItemContainer {
+    text-align: center;
 }
 
 body {
@@ -58,7 +64,9 @@ body {
     height:100%;
 }
 
-.sudokuInput, .sudokuNumberBarItem.active {
+.sudokuInput,
+.sudokuNumberBarItem.activeBarItem,
+.resetSelectedButton.activeBarItem {
     cursor: pointer;
 }
 
@@ -139,7 +147,7 @@ body {
     line-height: 50px;
     color: #77778A;
     background-color: rgba(140, 140, 160, 0.3);
-    cursor: pointer;
+    cursor: default;
 }
 
 .alignBarItemRight {
