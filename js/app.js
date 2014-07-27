@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     var methods = {
         defaults: {
-            difficulty: "easy"
+            difficulty: "hard"
         },
         init: function () {
             this.config = $.extend({}, this.defaults, this.options);

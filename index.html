@@ -13,30 +13,45 @@
     <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-	<div id="contentContainer">
-		<div id="maincontainer"></div>
-		<h1 id="winningOverlay" class="centered">You Win!</h1>
-		<div id="sudokuNumberInputBar">
-			<div class="sudokuNumberBarItemContainer centered">
-				<div class="sudokuNumberBarItem" data-inputnumber="1">1</div>
-				<div class="sudokuNumberBarItem" data-inputnumber="2">2</div>
-				<div class="sudokuNumberBarItem" data-inputnumber="3">3</div>
+    <div id="contentContainer">
+        <div id="maincontainer"></div>
+        <h1 id="winningOverlay" class="centered">You Win!</h1>
+        <div id="sudokuNumberInputBar">
+            <div class="sudokuNumberBarItemContainer centered">
+                <div class="sudokuNumberBarItem" data-inputnumber="1">1</div>
+                <div class="sudokuNumberBarItem" data-inputnumber="2">2</div>
+                <div class="sudokuNumberBarItem" data-inputnumber="3">3</div>
+                <br />
+                <div class="sudokuNumberBarItem" data-inputnumber="4">4</div>
+                <div class="sudokuNumberBarItem" data-inputnumber="5">5</div>
+                <div class="sudokuNumberBarItem" data-inputnumber="6">6</div>
+                <br />
+                <div class="sudokuNumberBarItem bottomBarItem" data-inputnumber="7">7</div>
+                <div class="sudokuNumberBarItem bottomBarItem" data-inputnumber="8">8</div>
+                <div class="sudokuNumberBarItem bottomBarItem" data-inputnumber="9">9</div>
+            </div>
+			<div>
+            <div class="resetSelectedContainer">
+                <div class="resetSelectedButton">
+                    RESET TILE
+                </div>
+            </div>
+            <div class="newGameContainer">
+				<label class="newGameSelectWrapper">
+					<select class="newGameSelect">
+						<option value="volvo">Volvo</option>
+						<option value="saab">Saab</option>
+						<option value="mercedes">Mercedes</option>
+						<option value="audi">Audi</option>
+					</select>
+				</label>
 				<br />
-				<div class="sudokuNumberBarItem" data-inputnumber="4">4</div>
-				<div class="sudokuNumberBarItem" data-inputnumber="5">5</div>
-				<div class="sudokuNumberBarItem" data-inputnumber="6">6</div>
-				<br />
-				<div class="sudokuNumberBarItem" data-inputnumber="7">7</div>
-				<div class="sudokuNumberBarItem" data-inputnumber="8">8</div>
-				<div class="sudokuNumberBarItem" data-inputnumber="9">9</div>
-			</div>
-			<div class="resetSelectedContainer">
-				<div class="resetSelectedButton">
-					RESET
-				</div>
-			</div>
-		</div>
-	</div>
+                <div class="resetSelectedButton">
+                    RESET
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
     

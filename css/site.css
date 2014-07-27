@@ -3,15 +3,16 @@
     But I ain't got time for yo' SASS!
 */
 
+/*
+    ################
+    # Sudoku Board #
+    ################
+*/
+
 .sudokuGrid {
     background-color: rgba(255,255,255,0.37);
     width: 100%;
     height: 100%;
-}
-
-#maincontainer {
-    width:100%;
-    max-width:500px;
 }
 
 .sudokuRow {
@@ -45,16 +46,6 @@ div.cellItemContainer {
     text-align: center;
 }
 
-body {
-    /* Image from -> 
-       http://wallpaperscraft.com/download/spring_garden_flowering_trees_pink_30537/3840x2400 */
-    background: url('../img/sudoku-background.jpg') no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
 .sudokuInput {
     font-family: inherit;
     font-size: 100%;
@@ -71,15 +62,7 @@ body {
 }
 
 .staticSudoku, .sudokuInput, .sudokuNumberBarItem {
-    font-family: "Open Sans";
-    font-weight: 400;
-    font-size:24pt; 
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    font-size:24pt;
 }
 
 .staticSudoku {
@@ -87,20 +70,31 @@ body {
 }
 
 .staticSudokuBackground {
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
     margin: -1px;
     background-color: rgba(55, 55, 100, 0.1);
 }
 
+.selectedInput {
+    background-color: rgba(100, 100, 255, 0.3);
+}
+
+/*
+    ##############
+    # Number Bar #
+    ##############
+*/
+
 #sudokuNumberInputBar {
     width: auto;
-    max-width:500px;
+    max-width: 498px;
     margin: 10px auto;
     padding: 4px 1px;
     background: rgba(255, 255, 255, 0.37);
 }
 
+/* Hack to make floated divs maintain height */
 #sudokuNumberInputBar:after { 
    content: " ";
    display: block; 
@@ -111,10 +105,6 @@ body {
 .sudokuNumberBarItemContainer {
     float: left;
     padding: 0px 2px;
-}
-
-.selectedInput {
-    background-color: rgba(100, 100, 255, 0.3);
 }
 
 /* When it's a valid move (user can click) */
@@ -137,12 +127,18 @@ body {
     cursor: default;
 }
 
+.resetSelectedContainer {
+    float: left;
+    margin: 0px 0px 2px 3px;
+    width: 33%;
+    max-width: 160px;
+}
+
 .resetSelectedButton {
     float: left;
-    width: 106px;
+    width: 100%;
     list-style:none;
     text-align:center;
-    margin: 0px 1px 2px 3px;
     height: 52px;
     line-height: 50px;
     color: #77778A;
@@ -158,12 +154,107 @@ body {
     margin: 0px 1px 0px 5px;
 }
 
+.bottomBarItem {
+    margin-bottom: 0px;
+}
+
+.newGameSelect {
+    padding: 3px 3px 6px 3px;
+    margin: 0;
+    background: #f8f8f8;
+    color: #888;
+    border: none;
+    outline: none;
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    height: 52px;
+    width: 100%;
+    font-size: 12pt;
+}
+
+.newGameContainer {
+    float: right;
+    margin: 0px 0px 0px 3px;
+    width: 33%;
+    max-width: 160px;
+}
+
+/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .newGameSelect {
+        padding-right: 18px;
+    }
+}
+
+.newGameSelectWrapper {
+    position:relative;
+}
+.newGameSelectWrapper:after {
+    content: '<>';
+    font: 11px "Consolas", monospace;
+    color: #aaa;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 8px; 
+    top: 2px;
+    padding: 0px 0px 2px 0px;
+    margin: 2px 0px 0px 0px;
+    border-bottom: 1px solid #ddd;
+    position: absolute;
+    pointer-events: none;
+}
+.newGameSelectWrapper:before {
+    content: '';
+    right: 6px;
+    top: 0px;
+    width: 20px; 
+    height: 20px;
+    background: #f8f8f8;
+    position: absolute;
+    pointer-events: none;
+    display: block;
+}
+
+/*
+    #################
+    # Miscellaneous #
+    #################
+*/
+
+#maincontainer {
+    width: 100%;
+    max-width: 500px;
+}
+
+body {
+    /* Image from -> 
+       http://wallpaperscraft.com/download/spring_garden_flowering_trees_pink_30537/3840x2400 */
+    background: url('../img/sudoku-background.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+* {
+    font-family: "Open Sans";
+    font-weight: 400;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 #winningOverlay {
     width: 500px;
     height: 490px;
     text-align: center;
-    font-family: "Open Sans";
-    font-weight: 400;
     font-size:50pt; 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
