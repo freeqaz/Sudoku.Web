@@ -5,6 +5,8 @@ A sudoku app that's touch friendly. It's designed so that you select a square an
 
 This is built without using any constraining frameworks that make assumptions for you. Simple JQuery plugin with some basic click functionality. :D
 
+Live Version: http://freeqaz.com/public/sudoku/
+
 Install Instructions
 ===============
 
