@@ -1,7 +1,7 @@
 Sudoku.Web
 ==========
 
-A sudoku app that's touch friendly. It's designed so that you select a square and then the valid moves pop up, so it's easy to play on your phone. (A lot of other approaches use <input> which requires popping up the keyboard)
+A sudoku app that's touch friendly. It's designed so that you select a square and then the valid moves pop up, so it's easy to play on your phone. (A lot of other approaches use `<input>` which requires popping up the keyboard)
 
 This is built without using any constraining frameworks that make assumptions for you. Simple JQuery plugin with some basic click functionality. :D
 
