@@ -1,5 +1,8 @@
 $(document).ready(function () {
-    $("#maincontainer").sudokuify({});
+    var board;
+    board = localStorage.board;
+    var config = { board: board };
+    $("#maincontainer").sudokuify(config);
 });
 
 ;(function (window, $) {
@@ -20,7 +23,12 @@ $(document).ready(function () {
 
             this.generateView();
 
-            this.grid = this.generateSudokuPuzzle(this.config.difficulty);
+            if (this.config.board === undefined) {
+                this.grid = this.generateSudokuPuzzle(this.config.difficulty);
+            }
+            else {
+                this.grid = sudoku.board_string_to_grid(this.config.board);
+            }
 
             this.overwriteView(this.grid, true);
 
@@ -36,6 +44,8 @@ $(document).ready(function () {
         // Returns a 2d array.
         generateSudokuPuzzle: function(difficulty) {
             var gridString = sudoku.generate(difficulty, false);
+
+            localStorage.board = gridString;
 
             return sudoku.board_string_to_grid(gridString);
         },
@@ -113,6 +123,8 @@ $(document).ready(function () {
 
                 self.grid[parsed.xGrid][parsed.yGrid] = inputValue;
 
+                localStorage.board = sudoku.board_grid_to_string(self.grid);
+                console.log(localStorage.board);
                 // See if you're a winner!
                 if (sudoku.isFinished(self.grid)) {
                     // Show you how cool you are. ;)
