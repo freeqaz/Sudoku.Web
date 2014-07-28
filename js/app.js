@@ -139,6 +139,13 @@ $(document).ready(function () {
 
                 self.refreshMoves(self.grid, parsed.xGrid, parsed.yGrid);
             });
+
+            // When you hit reset on a cell, aka clear it.
+            $(".newGameButton").click(function () {
+                self.grid = self.generateSudokuPuzzle(self.config.difficulty);
+
+                self.overwriteView(self.grid, true);
+            });
         },
         generateCell: function (cell, sudokuBoxes, origin) {
             _.each(sudokuBoxes, function (cellRow) {
