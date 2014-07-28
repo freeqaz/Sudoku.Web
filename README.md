@@ -25,5 +25,5 @@ Screenshot
 
 Todo Wishlist
 ===============
-Fully responsive layout (Swap CSS, probably)
-Save game state to local storage when you move
+* Fully responsive layout (Swap CSS, probably)
+* Save game state to local storage when you move
