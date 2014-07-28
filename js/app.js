@@ -13,13 +13,12 @@ $(document).ready(function () {
 
     var methods = {
         defaults: {
-            difficulty: "hard"
+            difficulty: "easy"
         },
         init: function () {
             this.config = $.extend({}, this.defaults, this.options);
 
             this.generateView();
-            $("#winningOverlay").hide();
 
             this.grid = this.generateSudokuPuzzle(this.config.difficulty);
 
@@ -44,6 +43,7 @@ $(document).ready(function () {
             var self = this;
 
             var sudokuContainer = this.$elem;
+            $("#winningOverlay").hide();
 
             sudokuContainer.addClass("sudokuContainer centered");
 
@@ -118,6 +118,7 @@ $(document).ready(function () {
                     // Show you how cool you are. ;)
                     $("#maincontainer").hide();
                     $("#winningOverlay").show();
+                    self.resetSelected();
                 }
 
                 self.refreshMoves(self.grid, parsed.xGrid, parsed.yGrid);
@@ -142,8 +143,10 @@ $(document).ready(function () {
 
             // When click new game, reset board with difficulty.
             $(".newGameButton").click(function () {
+                $("#winningOverlay").hide();
+                $("#maincontainer").show();
                 self.grid = self.generateSudokuPuzzle(self.config.difficulty);
-
+                self.resetSelected();
                 self.overwriteView(self.grid, true);
             });
 
@@ -256,6 +259,11 @@ $(document).ready(function () {
             parsed.yGrid = (parsed.y * 3) + parsed.yCell;
             
             return parsed;
+        },
+        resetSelected: function () {
+            $(".sudokuInput").unbind();
+            $(".selectedInput").removeClass("selectedInput");
+            $(".activeBarItem").removeClass("activeBarItem");
         }
     };
 
