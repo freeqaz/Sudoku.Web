@@ -19,6 +19,7 @@
     "gulp-uglify": "^0.3.1",
     "gulp-util": "^3.0.0",
     "connect": "~3.1.0",
-    "serve-static": "~1.4.2"
+    "serve-static": "~1.4.2",
+    "gulp-bower": "0.0.6"
   }
 }
