@@ -18,7 +18,8 @@ $(document).ready(function () {
         init: function () {
             this.config = $.extend({}, this.defaults, this.options);
 
-            this.generateView();
+            //this.generateView();
+            $("#winningOverlay").hide();
 
             this.grid = this.generateSudokuPuzzle(this.config.difficulty);
 
@@ -43,7 +44,6 @@ $(document).ready(function () {
             var self = this;
 
             var sudokuContainer = this.$elem;
-            $("#winningOverlay").hide();
 
             sudokuContainer.addClass("sudokuContainer centered");
 

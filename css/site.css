@@ -110,7 +110,7 @@ div.cellItemContainer {
 /* When it's a valid move (user can click) */
 .sudokuNumberBarItem.activeBarItem,
     .resetSelectedButton.activeBarItem {
-        background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.6);
     color: black;
 }
 
@@ -128,22 +128,35 @@ div.cellItemContainer {
 }
 
 .resetSelectedContainer {
-    float: left;
-    margin: 0px 0px 2px 3px;
-    width: 33%;
+    padding: 0px 3px 0px 3px;
     max-width: 160px;
 }
 
-.resetSelectedButton {
+.resetSelectedButton, .newGameButton {
     float: left;
     width: 100%;
     list-style:none;
     text-align:center;
-    height: 52px;
+    min-height: 52px;
     line-height: 50px;
     color: #77778A;
     background-color: rgba(140, 140, 160, 0.3);
     cursor: default;
+}
+
+.newGameButton {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: black;
+    cursor: pointer;
+    display: block;
+}
+
+.newGameButton:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.newGameButton:active {
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .alignBarItemRight {
@@ -175,10 +188,29 @@ div.cellItemContainer {
 }
 
 .newGameContainer {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.bottomActionContainer {
+    margin: 0px 0px 0px 166px;
+    height: 100%;
+}
+
+.rightContainer {
     float: right;
-    margin: 0px 0px 0px 3px;
-    width: 33%;
-    max-width: 160px;
+    position:relative;
+    width: 50%;
+}
+
+.leftContainer {
+    float: left;
+    position:relative;
+    width: 50%;
+}
+
+.newGameButtonContainer {
+    margin-top: 5px;
 }
 
 /* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
@@ -189,8 +221,9 @@ div.cellItemContainer {
 }
 
 .newGameSelectWrapper {
-    position:relative;
+    position: relative;
 }
+
 .newGameSelectWrapper:after {
     content: '<>';
     font: 11px "Consolas", monospace;
@@ -207,6 +240,7 @@ div.cellItemContainer {
     position: absolute;
     pointer-events: none;
 }
+
 .newGameSelectWrapper:before {
     content: '';
     right: 6px;

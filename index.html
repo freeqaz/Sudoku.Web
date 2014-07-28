@@ -14,12 +14,382 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <div id="contentContainer">
-        <div id="maincontainer"></div>
+		<!-- Once upon a time, this was dynamically generated.
+		     However, the DOM came forth and spoke to me,
+			 "'tis slow to build. Laggy browsers like IE have bugs where
+			  selecting an element immediately after it was added to the DOM
+			  will cause it not to be found by JQuery.
+			  Then you end up with half of a layout."
+			 And then Chrome copied the HTML nodes into my clipboard and hence,
+			 This static HTML was forged. Free of bugs and ugly js! -->
+		<div id="maincontainer" class="sudokuContainer centered">
+			<table class="sudokuGrid">
+				<tbody>
+					<tr class="sudokuRow row0">
+						<td class="sudokuCell cell0-0 ">
+							<table class="sudokuCellGrid sudokuCellGrid0-0">
+								<tbody>
+									<tr class="sudokuCellRow cellRow0-0-0">
+										<td class="sudokuCellColumn cellColumn0-0-0-0">
+											<div class="cellItemContainer centered cellItemContainer0-0-0-0 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn0-0-1-0">
+											<div class="cellItemContainer centered cellItemContainer0-0-1-0 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn0-0-2-0">
+											<div class="cellItemContainer centered cellItemContainer0-0-2-0 "></div>
+										</td>
+									</tr>
+									<tr class="sudokuCellRow cellRow0-0-1">
+										<td class="sudokuCellColumn cellColumn0-0-0-1">
+											<div class="cellItemContainer centered cellItemContainer0-0-0-1 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn0-0-1-1">
+											<div class="cellItemContainer centered cellItemContainer0-0-1-1 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn0-0-2-1">
+											<div class="cellItemContainer centered cellItemContainer0-0-2-1 "></div>
+										</td>
+									</tr>
+									<tr class="sudokuCellRow cellRow0-0-2">
+										<td class="sudokuCellColumn cellColumn0-0-0-2">
+											<div class="cellItemContainer centered cellItemContainer0-0-0-2 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn0-0-1-2">
+											<div class="cellItemContainer centered cellItemContainer0-0-1-2 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn0-0-2-2">
+											<div class="cellItemContainer centered cellItemContainer0-0-2-2 "></div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						<td class="sudokuCell cell1-0 v ">
+							<table class="sudokuCellGrid sudokuCellGrid1-0">
+								<tbody>
+									<tr class="sudokuCellRow cellRow1-0-0">
+										<td class="sudokuCellColumn cellColumn1-0-0-0">
+											<div class="cellItemContainer centered cellItemContainer1-0-0-0 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn1-0-1-0">
+											<div class="cellItemContainer centered cellItemContainer1-0-1-0 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn1-0-2-0">
+											<div class="cellItemContainer centered cellItemContainer1-0-2-0 "></div>
+										</td>
+									</tr>
+									<tr class="sudokuCellRow cellRow1-0-1">
+										<td class="sudokuCellColumn cellColumn1-0-0-1">
+											<div class="cellItemContainer centered cellItemContainer1-0-0-1 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn1-0-1-1">
+											<div class="cellItemContainer centered cellItemContainer1-0-1-1 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn1-0-2-1">
+											<div class="cellItemContainer centered cellItemContainer1-0-2-1 "></div>
+										</td>
+									</tr>
+									<tr class="sudokuCellRow cellRow1-0-2">
+										<td class="sudokuCellColumn cellColumn1-0-0-2">
+											<div class="cellItemContainer centered cellItemContainer1-0-0-2 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn1-0-1-2">
+											<div class="cellItemContainer centered cellItemContainer1-0-1-2 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn1-0-2-2">
+											<div class="cellItemContainer centered cellItemContainer1-0-2-2 "></div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						<td class="sudokuCell cell2-0 ">
+							<table class="sudokuCellGrid sudokuCellGrid2-0">
+								<tbody>
+									<tr class="sudokuCellRow cellRow2-0-0">
+										<td class="sudokuCellColumn cellColumn2-0-0-0">
+											<div class="cellItemContainer centered cellItemContainer2-0-0-0 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn2-0-1-0">
+											<div class="cellItemContainer centered cellItemContainer2-0-1-0 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn2-0-2-0">
+											<div class="cellItemContainer centered cellItemContainer2-0-2-0 "></div>
+										</td>
+									</tr>
+									<tr class="sudokuCellRow cellRow2-0-1">
+										<td class="sudokuCellColumn cellColumn2-0-0-1">
+											<div class="cellItemContainer centered cellItemContainer2-0-0-1 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn2-0-1-1">
+											<div class="cellItemContainer centered cellItemContainer2-0-1-1 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn2-0-2-1">
+											<div class="cellItemContainer centered cellItemContainer2-0-2-1 "></div>
+										</td>
+									</tr>
+									<tr class="sudokuCellRow cellRow2-0-2">
+										<td class="sudokuCellColumn cellColumn2-0-0-2">
+											<div class="cellItemContainer centered cellItemContainer2-0-0-2 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn2-0-1-2">
+											<div class="cellItemContainer centered cellItemContainer2-0-1-2 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn2-0-2-2">
+											<div class="cellItemContainer centered cellItemContainer2-0-2-2 "></div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					<tr class="sudokuRow row1">
+						<td class="sudokuCell cell0-1 h ">
+							<table class="sudokuCellGrid sudokuCellGrid0-1">
+								<tbody>
+									<tr class="sudokuCellRow cellRow0-1-0">
+										<td class="sudokuCellColumn cellColumn0-1-0-0">
+											<div class="cellItemContainer centered cellItemContainer0-1-0-0 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn0-1-1-0">
+											<div class="cellItemContainer centered cellItemContainer0-1-1-0 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn0-1-2-0">
+											<div class="cellItemContainer centered cellItemContainer0-1-2-0 "></div>
+										</td>
+									</tr>
+									<tr class="sudokuCellRow cellRow0-1-1">
+										<td class="sudokuCellColumn cellColumn0-1-0-1">
+											<div class="cellItemContainer centered cellItemContainer0-1-0-1 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn0-1-1-1">
+											<div class="cellItemContainer centered cellItemContainer0-1-1-1 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn0-1-2-1">
+											<div class="cellItemContainer centered cellItemContainer0-1-2-1 "></div>
+										</td>
+									</tr>
+									<tr class="sudokuCellRow cellRow0-1-2">
+										<td class="sudokuCellColumn cellColumn0-1-0-2">
+											<div class="cellItemContainer centered cellItemContainer0-1-0-2 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn0-1-1-2">
+											<div class="cellItemContainer centered cellItemContainer0-1-1-2 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn0-1-2-2">
+											<div class="cellItemContainer centered cellItemContainer0-1-2-2 "></div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						<td class="sudokuCell cell1-1 v h ">
+							<table class="sudokuCellGrid sudokuCellGrid1-1">
+								<tbody>
+									<tr class="sudokuCellRow cellRow1-1-0">
+										<td class="sudokuCellColumn cellColumn1-1-0-0">
+											<div class="cellItemContainer centered cellItemContainer1-1-0-0 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn1-1-1-0">
+											<div class="cellItemContainer centered cellItemContainer1-1-1-0 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn1-1-2-0">
+											<div class="cellItemContainer centered cellItemContainer1-1-2-0 "></div>
+										</td>
+									</tr>
+									<tr class="sudokuCellRow cellRow1-1-1">
+										<td class="sudokuCellColumn cellColumn1-1-0-1">
+											<div class="cellItemContainer centered cellItemContainer1-1-0-1 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn1-1-1-1">
+											<div class="cellItemContainer centered cellItemContainer1-1-1-1 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn1-1-2-1">
+											<div class="cellItemContainer centered cellItemContainer1-1-2-1 "></div>
+										</td>
+									</tr>
+									<tr class="sudokuCellRow cellRow1-1-2">
+										<td class="sudokuCellColumn cellColumn1-1-0-2">
+											<div class="cellItemContainer centered cellItemContainer1-1-0-2 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn1-1-1-2">
+											<div class="cellItemContainer centered cellItemContainer1-1-1-2 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn1-1-2-2">
+											<div class="cellItemContainer centered cellItemContainer1-1-2-2 "></div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						<td class="sudokuCell cell2-1 h ">
+							<table class="sudokuCellGrid sudokuCellGrid2-1">
+								<tbody>
+									<tr class="sudokuCellRow cellRow2-1-0">
+										<td class="sudokuCellColumn cellColumn2-1-0-0">
+											<div class="cellItemContainer centered cellItemContainer2-1-0-0 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn2-1-1-0">
+											<div class="cellItemContainer centered cellItemContainer2-1-1-0 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn2-1-2-0">
+											<div class="cellItemContainer centered cellItemContainer2-1-2-0 "></div>
+										</td>
+									</tr>
+									<tr class="sudokuCellRow cellRow2-1-1">
+										<td class="sudokuCellColumn cellColumn2-1-0-1">
+											<div class="cellItemContainer centered cellItemContainer2-1-0-1 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn2-1-1-1">
+											<div class="cellItemContainer centered cellItemContainer2-1-1-1 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn2-1-2-1">
+											<div class="cellItemContainer centered cellItemContainer2-1-2-1 "></div>
+										</td>
+									</tr>
+									<tr class="sudokuCellRow cellRow2-1-2">
+										<td class="sudokuCellColumn cellColumn2-1-0-2">
+											<div class="cellItemContainer centered cellItemContainer2-1-0-2 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn2-1-1-2">
+											<div class="cellItemContainer centered cellItemContainer2-1-1-2 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn2-1-2-2">
+											<div class="cellItemContainer centered cellItemContainer2-1-2-2 "></div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					<tr class="sudokuRow row2">
+						<td class="sudokuCell cell0-2 ">
+							<table class="sudokuCellGrid sudokuCellGrid0-2">
+								<tbody>
+									<tr class="sudokuCellRow cellRow0-2-0">
+										<td class="sudokuCellColumn cellColumn0-2-0-0">
+											<div class="cellItemContainer centered cellItemContainer0-2-0-0 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn0-2-1-0">
+											<div class="cellItemContainer centered cellItemContainer0-2-1-0 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn0-2-2-0">
+											<div class="cellItemContainer centered cellItemContainer0-2-2-0 "></div>
+										</td>
+									</tr>
+									<tr class="sudokuCellRow cellRow0-2-1">
+										<td class="sudokuCellColumn cellColumn0-2-0-1">
+											<div class="cellItemContainer centered cellItemContainer0-2-0-1 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn0-2-1-1">
+											<div class="cellItemContainer centered cellItemContainer0-2-1-1 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn0-2-2-1">
+											<div class="cellItemContainer centered cellItemContainer0-2-2-1 "></div>
+										</td>
+									</tr>
+									<tr class="sudokuCellRow cellRow0-2-2">
+										<td class="sudokuCellColumn cellColumn0-2-0-2">
+											<div class="cellItemContainer centered cellItemContainer0-2-0-2 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn0-2-1-2">
+											<div class="cellItemContainer centered cellItemContainer0-2-1-2 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn0-2-2-2">
+											<div class="cellItemContainer centered cellItemContainer0-2-2-2 "></div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						<td class="sudokuCell cell1-2 v ">
+							<table class="sudokuCellGrid sudokuCellGrid1-2">
+								<tbody>
+									<tr class="sudokuCellRow cellRow1-2-0">
+										<td class="sudokuCellColumn cellColumn1-2-0-0">
+											<div class="cellItemContainer centered cellItemContainer1-2-0-0 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn1-2-1-0">
+											<div class="cellItemContainer centered cellItemContainer1-2-1-0 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn1-2-2-0">
+											<div class="cellItemContainer centered cellItemContainer1-2-2-0 "></div>
+										</td>
+									</tr>
+									<tr class="sudokuCellRow cellRow1-2-1">
+										<td class="sudokuCellColumn cellColumn1-2-0-1">
+											<div class="cellItemContainer centered cellItemContainer1-2-0-1 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn1-2-1-1">
+											<div class="cellItemContainer centered cellItemContainer1-2-1-1 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn1-2-2-1">
+											<div class="cellItemContainer centered cellItemContainer1-2-2-1 "></div>
+										</td>
+									</tr>
+									<tr class="sudokuCellRow cellRow1-2-2">
+										<td class="sudokuCellColumn cellColumn1-2-0-2">
+											<div class="cellItemContainer centered cellItemContainer1-2-0-2 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn1-2-1-2">
+											<div class="cellItemContainer centered cellItemContainer1-2-1-2 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn1-2-2-2">
+											<div class="cellItemContainer centered cellItemContainer1-2-2-2 "></div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						<td class="sudokuCell cell2-2 ">
+							<table class="sudokuCellGrid sudokuCellGrid2-2">
+								<tbody>
+									<tr class="sudokuCellRow cellRow2-2-0">
+										<td class="sudokuCellColumn cellColumn2-2-0-0">
+											<div class="cellItemContainer centered cellItemContainer2-2-0-0 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn2-2-1-0">
+											<div class="cellItemContainer centered cellItemContainer2-2-1-0 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn2-2-2-0">
+											<div class="cellItemContainer centered cellItemContainer2-2-2-0 "></div>
+										</td>
+									</tr>
+									<tr class="sudokuCellRow cellRow2-2-1">
+										<td class="sudokuCellColumn cellColumn2-2-0-1">
+											<div class="cellItemContainer centered cellItemContainer2-2-0-1 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn2-2-1-1">
+											<div class="cellItemContainer centered cellItemContainer2-2-1-1 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn2-2-2-1">
+											<div class="cellItemContainer centered cellItemContainer2-2-2-1 "></div>
+										</td>
+									</tr>
+									<tr class="sudokuCellRow cellRow2-2-2">
+										<td class="sudokuCellColumn cellColumn2-2-0-2">
+											<div class="cellItemContainer centered cellItemContainer2-2-0-2 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn2-2-1-2">
+											<div class="cellItemContainer centered cellItemContainer2-2-1-2 "></div>
+										</td>
+										<td class="sudokuCellColumn cellColumn2-2-2-2">
+											<div class="cellItemContainer centered cellItemContainer2-2-2-2 "></div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
         <h1 id="winningOverlay" class="centered">You Win!</h1>
         <div id="sudokuNumberInputBar">
             <div class="sudokuNumberBarItemContainer centered">
                 <div class="sudokuNumberBarItem" data-inputnumber="1">1</div>
-                <div class="sudokuNumberBarItem" data-inputnumber="2">2</div>
+								<div class="sudokuNumberBarItem" data-inputnumber="2">2</div>
                 <div class="sudokuNumberBarItem" data-inputnumber="3">3</div>
                 <br />
                 <div class="sudokuNumberBarItem" data-inputnumber="4">4</div>
@@ -30,26 +400,34 @@
                 <div class="sudokuNumberBarItem bottomBarItem" data-inputnumber="8">8</div>
                 <div class="sudokuNumberBarItem bottomBarItem" data-inputnumber="9">9</div>
             </div>
-			<div>
-            <div class="resetSelectedContainer">
-                <div class="resetSelectedButton">
-                    RESET TILE
-                </div>
-            </div>
-            <div class="newGameContainer">
-				<label class="newGameSelectWrapper">
-					<select class="newGameSelect">
-						<option value="volvo">Volvo</option>
-						<option value="saab">Saab</option>
-						<option value="mercedes">Mercedes</option>
-						<option value="audi">Audi</option>
-					</select>
-				</label>
-				<br />
-                <div class="resetSelectedButton">
-                    RESET
-                </div>
-            </div>
+			<div class="bottomActionContainer">
+				<div class="leftContainer">
+					<div class="resetSelectedContainer">
+						<div class="resetSelectedButton">
+							RESET TILE
+						</div>
+					</div>
+				</div>
+				<div class="rightContainer">
+					<div class="newGameContainer">
+						<label class="newGameSelectWrapper">
+							<select class="newGameSelect">
+								<option value="easy">Easy</option>
+								<option value="medium">Medium</option>
+								<option value="hard">Hard</option>
+								<option value="very-hard">Very Hard</option>
+								<option value="insane">Insane</option>
+							</select>
+						</label>
+						
+						<div class="newGameButtonContainer">
+							<div class="newGameButton">
+								NEW GAME
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
         </div>
     </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
