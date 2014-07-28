@@ -10,6 +10,7 @@ Install Instructions
 
 1. Install node.js and npm (just google it)
 2. Install bower: `npm install -g bower`
+2. Install gulp: `npm install -g gulp`
 3. Clone repo and open shell in directory
   * `npm install`
   * `bower install`
