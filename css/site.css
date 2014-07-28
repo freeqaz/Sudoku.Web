@@ -305,7 +305,7 @@ body {
     user-select: none;
 }
 
-#winningOverlay {
+.overlay {
     width: 500px;
     height: 500px;
     text-align: center;
