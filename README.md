@@ -22,3 +22,8 @@ Install Instructions
 Screenshot
 ==========
 ![Alt text](/sudokuscreenshot.png?raw=true "Screenshot")
+
+Todo Wishlist
+===============
+Fully responsive layout (Swap CSS, probably)
+Save game state to local storage when you move
