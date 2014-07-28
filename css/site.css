@@ -115,8 +115,8 @@ div.cellItemContainer {
 }
 
 .sudokuNumberBarItem {
-    float: left;
     width: 52px;
+    float: left;
     list-style:none;
     text-align:center;
     margin: 0px 1px 2px 1px;
@@ -125,6 +125,10 @@ div.cellItemContainer {
     color: #77778A;
     background-color: rgba(140, 140, 160, 0.3);
     cursor: default;
+}
+
+.sudokuNumberBarItemRow {
+    clear: both;
 }
 
 .resetSelectedContainer {

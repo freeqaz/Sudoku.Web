@@ -140,11 +140,16 @@ $(document).ready(function () {
                 self.refreshMoves(self.grid, parsed.xGrid, parsed.yGrid);
             });
 
-            // When you hit reset on a cell, aka clear it.
+            // When click new game, reset board with difficulty.
             $(".newGameButton").click(function () {
                 self.grid = self.generateSudokuPuzzle(self.config.difficulty);
 
                 self.overwriteView(self.grid, true);
+            });
+
+            // Set the new difficulty
+            $(".newGameSelect").click(function () {
+                self.config.difficulty = $("option:selected", this)[0].value;
             });
         },
         generateCell: function (cell, sudokuBoxes, origin) {
