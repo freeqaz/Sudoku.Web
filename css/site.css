@@ -151,11 +151,15 @@ div.cellItemContainer {
     display: block;
 }
 
-.newGameButton:hover {
+.newGameButton:hover,
+    .sudokuNumberBarItem.activeBarItem:hover,
+    .resetSelectedButton.activeBarItem:hover {
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-.newGameButton:active {
+.newGameButton:active,
+    .sudokuNumberBarItem.activeBarItem:active,
+    .resetSelectedButton.activeBarItem:active {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -180,7 +184,17 @@ div.cellItemContainer {
     outline: none;
     display: inline-block;
     -webkit-appearance: none;
+
+    /*
+        This doesn't work in firefox 30+ for
+        removing the right-hand arrow in selects...
+        Arg! Bootstrap hacks around this with some neat
+        javascript. Solution is to implement said
+        clever js... Todo.
+    */
     -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
     cursor: pointer;
     height: 52px;
     width: 100%;
@@ -287,7 +301,7 @@ body {
 
 #winningOverlay {
     width: 500px;
-    height: 490px;
+    height: 500px;
     text-align: center;
     font-size:50pt; 
     -webkit-touch-callout: none;
