@@ -18,3 +18,7 @@ Install Instructions
 5. Run web server (simple node file server): `node server.js`
 6. Connect to `localhost:8080`
 7. Get some iced tea and chill out, because sudoku is hard!
+
+Screenshot
+==========
+![Alt text](/sudokuscreenshot.png?raw=true "Screenshot")
