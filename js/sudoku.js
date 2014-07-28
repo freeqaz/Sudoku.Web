@@ -1,5 +1,6 @@
 // Provided courtesy of robatron.
 // I fixed all of the JSLint errors
+// And added a few utility features. :)
 // Original Repo:
 // https://github.com/robatron/sudoku.js
 (function (root) {
