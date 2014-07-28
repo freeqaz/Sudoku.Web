@@ -28,11 +28,8 @@
 }
 
 .sudokuCellGrid {
-    height: 161px;
+    height: 158px;
     width: 100%;
-}
-
-.sudokuCellRow {
 }
 
 .sudokuCellColumn {
@@ -306,7 +303,8 @@ body {
 }
 
 .overlay {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     height: 500px;
     text-align: center;
     font-size:50pt; 
