@@ -82,7 +82,7 @@ div.cellItemContainer {
 
 /*
     ##############
-    # Number Bar #
+    # Bottom Bar #
     ##############
 */
 
@@ -210,25 +210,27 @@ div.cellItemContainer {
     margin-right: 3px;
 }
 
+.newGameButtonContainer {
+    margin-top: 5px;
+}
+
 .bottomActionContainer {
     margin: 0px 0px 0px 166px;
     height: 100%;
 }
 
+/* Used for our simple 2-column grid 
+   for handling a responsive-ish layout. */
 .rightContainer {
     float: right;
-    position:relative;
+    position: relative;
     width: 50%;
 }
 
 .leftContainer {
     float: left;
-    position:relative;
+    position: relative;
     width: 50%;
-}
-
-.newGameButtonContainer {
-    margin-top: 5px;
 }
 
 /* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
