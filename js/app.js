@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $("#loadingOverlay").hide();
     $("#maincontainer").sudokuify({});
 });
 

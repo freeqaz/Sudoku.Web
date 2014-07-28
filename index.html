@@ -14,16 +14,13 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <div id="contentContainer">
-		<!-- Once upon a time, this was dynamically generated.
-		     However, the DOM came forth and spoke to me,
-			 "'tis slow to build. Laggy browsers like IE have bugs where
-			  selecting an element immediately after it was added to the DOM
-			  will cause it not to be found by JQuery.
-			  Then you end up with half of a layout."
-			 And then Chrome copied the HTML nodes into my clipboard and hence,
-			 This static HTML was forged. Free of bugs and ugly js! -->
+        <div id="loadingOverlay" class="overlay centered">
+			Loading...
+			<br />
+			<img src="http://i.imgur.com/nwu6stt.gif" />
+		</div>
 		<div id="maincontainer"></div>
-        <h1 id="winningOverlay" class="centered">You Win!</h1>
+        <h1 id="winningOverlay" class="overlay centered">You Win!</h1>
         <div id="sudokuNumberInputBar">
             <div class="sudokuNumberBarItemContainer centered">
 				<div class="sudokuNumberBarItemRow">
