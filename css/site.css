@@ -41,6 +41,7 @@
 
 div.cellItemContainer {
     text-align: center;
+	height: 52px;
 }
 
 .sudokuInput {
