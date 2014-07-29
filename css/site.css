@@ -27,21 +27,11 @@
     margin: 0px;
 }
 
-.sudokuCellGrid {
-    height: 158px;
-    width: 100%;
-}
-
 .sudokuCellColumn {
     width:33.3%;
     height:33.3%;
     background-color: rgba(255,255,255,0.66);
     padding: 0px;
-}
-
-div.cellItemContainer {
-    text-align: center;
-	height: 52px;
 }
 
 .sudokuInput {
@@ -57,10 +47,6 @@ div.cellItemContainer {
 .sudokuNumberBarItem.activeBarItem,
 .resetSelectedButton.activeBarItem {
     cursor: pointer;
-}
-
-.staticSudoku, .sudokuInput, .sudokuNumberBarItem {
-    font-size:24pt;
 }
 
 .staticSudoku {
@@ -110,19 +96,6 @@ div.cellItemContainer {
     .resetSelectedButton.activeBarItem {
     background-color: rgba(255, 255, 255, 0.6);
     color: black;
-}
-
-.sudokuNumberBarItem {
-    width: 52px;
-    float: left;
-    list-style:none;
-    text-align:center;
-    margin: 0px 1px 2px 1px;
-    height: 52px;
-    line-height: 50px;
-    color: #77778A;
-    background-color: rgba(140, 140, 160, 0.3);
-    cursor: default;
 }
 
 .sudokuNumberBarItemRow {
@@ -175,6 +148,19 @@ div.cellItemContainer {
 
 .bottomBarItem {
     margin-bottom: 0px;
+}
+
+.sudokuNumberBarItem {
+    width: 52px;
+    float: left;
+    list-style:none;
+    text-align:center;
+    margin: 0px 1px 2px 1px;
+    height: 52px;
+    line-height: 50px;
+    color: #77778A;
+    background-color: rgba(140, 140, 160, 0.3);
+    cursor: default;
 }
 
 .newGameSelect {
@@ -269,6 +255,60 @@ div.cellItemContainer {
     position: absolute;
     pointer-events: none;
     display: block;
+}
+
+/*
+    ####################
+    # Responsive Stuff #
+    ####################
+*/
+
+@media all and (max-width: 499px) and (min-width: 300px) {
+    div.cellItemContainer {
+        text-align: center;
+        height: 40px;
+    }
+
+    .sudokuCellGrid {
+        height: 122px;
+        width: 100%;
+    }
+
+    .staticSudoku, .sudokuInput, .sudokuNumberBarItem {
+        font-size:20pt;
+    }
+
+    .newGameButton:before {
+        content: "NEW";
+    }
+
+    .resetSelectedButton:before {
+        content: "RESET";
+    }
+}
+
+@media all and (min-width: 500px) {
+    div.cellItemContainer {
+        text-align: center;
+        height: 52px;
+    }
+
+    .sudokuCellGrid {
+        height: 158px;
+        width: 100%;
+    }
+
+    .staticSudoku, .sudokuInput, .sudokuNumberBarItem {
+        font-size:24pt;
+    }
+
+    .newGameButton:before {
+        content: "NEW GAME";
+    }
+
+    .resetSelectedButton:before {
+        content: "RESET TILE";
+    }
 }
 
 /*
