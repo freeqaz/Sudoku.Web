@@ -199,8 +199,9 @@
 }
 
 .bottomActionContainer {
-    margin: 0px 0px 0px 166px;
+    width:auto;
     height: 100%;
+    overflow:hidden;
 }
 
 /* Used for our simple 2-column grid 
@@ -284,6 +285,12 @@
 
     .resetSelectedButton:before {
         content: "RESET";
+    }
+
+    .sudokuNumberBarItem {
+        width: 46px;
+        height: 46px;
+        line-height: 40px;
     }
 }
 
