@@ -267,7 +267,7 @@
 @media all and (max-width: 499px) and (min-width: 300px) {
     div.cellItemContainer {
         text-align: center;
-        height: 40px;
+        height: 45px;
     }
 
     .sudokuCellGrid {
